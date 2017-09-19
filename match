@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+
+var fs = require('fs')
+var path = require('path')
+var config = require('./package.json')
+var program = require('commander')
+var match = require('./')
+
+program
+  .version(config.version)
+  .option('-d, --data [path]', 'input data path')
+  .option('-o, --output [directory]', 'output directory')
+  .option('-t, --threshold [number]', 'threshold')
+  .parse(process.argv)
+
+fs.readFile(program.data, (fsReadFileError, data) => {
+  if (fsReadFileError) throw new Error(fsReadFileError)
+
+  try {
+    data = JSON.parse(data)
+  } catch (jsonParseError) {
+    throw new Error(jsonParseError)
+  }
+
+  match(data, program.threshold, (matchError, ratios) => {
+    if (matchError) throw new Error(matchError)
+    var duplicateFeatures = data.features.map((f, i) => Object.assign(f, { ratio: ratios[i] }))
+      .filter(f => f.ratio < 0.5)
+    var output = { type: 'FeatureCollection', features: duplicateFeatures }
+    var out = path.join(__dirname, (program.output || '.'))
+    fs.writeFile(path.join(out, 'duplicates.geojson'), JSON.stringify(output), (fsWriteFileError) => {
+      if (fsWriteFileError) throw new Error(fsWriteFileError)
+    })
+  })
+})

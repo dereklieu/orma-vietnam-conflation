@@ -1,0 +1,15 @@
+{
+  "name": "orma-conflation",
+  "version": "0.0.1",
+  "description": "Line conflation engine for ORMA Vietnam",
+  "main": "index.js",
+  "author": "Derek Lieu <dl@dereklieu.com>",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.11.0",
+    "linematch": "^1.0.3",
+    "mkdirp": "^0.5.1",
+    "turf-line-distance": "^3.0.12",
+    "turf-multilinestring": "^1.0.2"
+  }
+}
