@@ -23,10 +23,10 @@ fs.readFile(program.data, (fsReadFileError, data) => {
   }
 
   console.log('Working...')
-  match(data, program.threshold, (matchError, ratios) => {
+  match(data, program.threshold, (matchError, matches) => {
     if (matchError) throw new Error(matchError)
-    var duplicateFeatures = data.features.map((f, i) => Object.assign(f, { ratio: ratios[i] }))
-      .filter(f => f.ratio < 0.9)
+    var duplicateFeatures = data.features.map((f, i) => Object.assign(f, { matches: matches[i] }))
+      .filter(f => f.matches.length)
     var output = { type: 'FeatureCollection', features: duplicateFeatures }
     console.log('Done!', duplicateFeatures.length, 'lines had duplicates')
     var out = path.join(__dirname, (program.output || '.'), 'duplicates.geojson')

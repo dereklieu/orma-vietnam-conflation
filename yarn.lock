@@ -6,12 +6,6 @@ commander@^2.11.0:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.11.0.tgz#157152fd1e7a6c8d98a5b715cf376df928004563"
 
-linematch@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/linematch/-/linematch-1.0.3.tgz#c1477237a86655af74445459fdcc3013e8b45b33"
-  dependencies:
-    rbush "^1.4.0"
-
 minimist@0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
@@ -22,32 +16,12 @@ mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
+"networkmatch@https://github.com/dereklieu/networkmatch.git":
+  version "1.0.0"
+  resolved "https://github.com/dereklieu/networkmatch.git#8c6eb2896275574daf46d264399ec1bbafaf7c5a"
+  dependencies:
+    rbush "^1.4.0"
+
 rbush@^1.4.0:
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/rbush/-/rbush-1.4.3.tgz#7874e2d38911d2719ea27731d32445da5ec4394c"
-
-turf-distance@^3.0.12:
-  version "3.0.12"
-  resolved "https://registry.yarnpkg.com/turf-distance/-/turf-distance-3.0.12.tgz#fb97b8705facd993b145e014b41862610eeca449"
-  dependencies:
-    turf-helpers "^3.0.12"
-    turf-invariant "^3.0.12"
-
-turf-helpers@^3.0.12:
-  version "3.0.12"
-  resolved "https://registry.yarnpkg.com/turf-helpers/-/turf-helpers-3.0.12.tgz#dd4272e74b3ad7c96eecb7ae5c57fe8eca544b7b"
-
-turf-invariant@^3.0.12:
-  version "3.0.12"
-  resolved "https://registry.yarnpkg.com/turf-invariant/-/turf-invariant-3.0.12.tgz#3b95253953991ebd962dd35d4f6704c287de8ebe"
-
-turf-line-distance@^3.0.12:
-  version "3.0.12"
-  resolved "https://registry.yarnpkg.com/turf-line-distance/-/turf-line-distance-3.0.12.tgz#7108f5b26907f7b8c2dd1b3997866dd3a60e8f5f"
-  dependencies:
-    turf-distance "^3.0.12"
-    turf-helpers "^3.0.12"
-
-turf-multilinestring@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/turf-multilinestring/-/turf-multilinestring-1.0.2.tgz#27a4419cf827941a597e207fd3efb228dc60defa"

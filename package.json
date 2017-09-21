@@ -7,9 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.11.0",
-    "linematch": "^1.0.3",
     "mkdirp": "^0.5.1",
-    "turf-line-distance": "^3.0.12",
-    "turf-multilinestring": "^1.0.2"
+    "networkmatch": "https://github.com/dereklieu/networkmatch.git"
   }
 }
