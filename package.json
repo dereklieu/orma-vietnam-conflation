@@ -5,9 +5,15 @@
   "main": "index.js",
   "author": "Derek Lieu <dl@dereklieu.com>",
   "license": "MIT",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint ."
+  },
   "dependencies": {
-    "commander": "^2.11.0",
-    "mkdirp": "^0.5.1",
+    "express": "^4.16.0",
+    "hat": "^0.0.3",
     "networkmatch": "https://github.com/dereklieu/networkmatch.git"
+  },
+  "devDependencies": {
+    "eslint": "^4.7.2"
   }
 }
