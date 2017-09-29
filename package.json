@@ -9,6 +9,7 @@
     "lint": "./node_modules/.bin/eslint ."
   },
   "dependencies": {
+    "cors": "^2.8.4",
     "express": "^4.16.0",
     "hat": "^0.0.3",
     "networkmatch": "https://github.com/dereklieu/networkmatch.git"

@@ -3,12 +3,14 @@
 var fs = require('fs')
 var path = require('path')
 var express = require('express')
+var cors = require('cors')
 var generateConflation = require('./lib/generate-conflation')
 
 var PORT = 3010
 
 function createServer (collisions) {
   var server = express()
+  server.use(cors())
   server.get('/collisions', (req, res) => {
     res.json(collisions.map(c => c._id))
   })
