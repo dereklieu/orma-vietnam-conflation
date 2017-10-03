@@ -4,7 +4,7 @@ var fs = require('fs')
 var path = require('path')
 var express = require('express')
 var cors = require('cors')
-var generateConflation = require('./lib/generate-conflation')
+var detectIntersections = require('./lib/detect-intersections')
 
 var PORT = 3010
 
@@ -29,7 +29,7 @@ function createServer (collisions) {
 fs.readFile(path.join(__dirname, 'data/sample.geojson'), (err, file) => {
   if (err) { throw new Error(err) }
   var network = JSON.parse(file)
-  generateConflation(network, (err, collisions) => {
+  detectIntersections(network, (err, collisions) => {
     if (err) { throw new Error(err) }
     createServer(collisions)
   })
